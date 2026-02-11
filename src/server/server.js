@@ -4,7 +4,7 @@ import ProductsList from "../components/ProductsList.js";
 import React from "react";
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const doc = (content) => `
 <!doctype html>
@@ -33,5 +33,5 @@ app.get("/products", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server radi na http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
